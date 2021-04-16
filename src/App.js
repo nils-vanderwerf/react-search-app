@@ -4,29 +4,36 @@ import {useState, useEffect} from 'react';
 import MovieList from "./components/MovieList"
 
 import {apiKey} from './credentials/keys'
+import Heading from './components/Heading';
+import SearchBox from './components/Searchbox';
 
 const App = () => {
   const [movies, setMovies] = useState([])
-
-  const getMovies = async () => {
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=finding nemo`
+  const [searchValue, setSearchValue] = useState('') 
   
-    fetch(url, {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-  } 
+  const getMovies = async () => {
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchValue}`
+
+    const response = await fetch(url)
+    const data = await response.json().catch(error => console.log(error))
+
+
+    if (data.Search) {
+      console.log('winning')
+      setMovies(data.Search)
+    }
+  }
+  
   
   useEffect(() => {
-    getMovies()
-  }, []); //called when the page loads
+    getMovies(searchValue)
+  }, [searchValue]); //called when the state updates
   
   
    return (
       <div className="container">
-        <h1>Movie Search</h1>
+        <Heading heading ='Heading'>'Movies'</Heading>
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
         <MovieList movies={movies}/>
         </div>
     )
