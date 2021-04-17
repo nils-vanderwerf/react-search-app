@@ -7,10 +7,12 @@ import MovieList from "./components/MovieList"
 import Heading from './components/Heading';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
+import RemoveFavourites from './components/RemoveFavourites'
 
 const App = () => {
   const [movies, setMovies] = useState([])
-  const [searchValue, setSearchValue] = useState('') 
+  const [searchValue, setSearchValue] = useState('')
+  const [favourites, setFavourites] = useState([]) 
   
   const getMovies = async () => {
     const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchValue}&plot=short`
@@ -36,13 +38,29 @@ const App = () => {
     getMovies(searchValue);
   }, [searchValue]); //called when the state updates
   
+  const addFavouriteMovie = (movie) => {
+    const newFavouritesList = [...favourites, movie]
+    setFavourites(newFavouritesList)
+  }
+
+  const removeFavouriteMovie = (movie) => {
+    const newFavouritesList = 
+    favourites.filter((faveMovie) => faveMovie.imdbID !== movie.imdbID)
+
+    setFavourites(newFavouritesList);
+
+  }
   
    return (
       <div className="container">
-        <Heading heading ='Heading'>'Movies'</Heading>
+        <Heading heading ='Movies'/>
           <div class="components-wrapper">
-            <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-            <MovieList movies={movies} favouriteComponent={AddFavourites}/>
+            <div className="search-favourites">
+              <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
+              <Heading heading ='Favourites'/>
+              <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie} favouriteComponent={RemoveFavourites}/>
+            </div>
+            <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddFavourites}/>
           </div>
         </div>
     )

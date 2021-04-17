@@ -43,6 +43,7 @@ body {
   color: red;
 }
 
+
 .movie-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,4 +51,17 @@ body {
   grid-row-gap: 90px;
   grid-auto-rows: auto;
   justify-content: space-between;
+}
+
+.search-favourites .movie-container {
+  padding-left: 50px;
+ }
+.search-favourites .movie-list {
+  display: block;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+i.fa {
+  margin-left: 10px;
 }

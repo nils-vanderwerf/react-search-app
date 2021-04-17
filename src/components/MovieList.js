@@ -11,7 +11,7 @@ const MovieList = (props) => {
                 <div className="movie-container" key={index}>
                     <div className="image-container">
                         <img src={movie.Poster} alt={movie.Title}/>
-                        <div className="overlay">
+                        <div className="overlay" onClick={() => props.handleFavouritesClick(movie)}>
                             <FavouriteComponent />
                         </div>
                     </div>

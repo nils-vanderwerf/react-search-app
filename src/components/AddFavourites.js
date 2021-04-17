@@ -5,8 +5,7 @@ const AddFavourites = () => {
     return (
     <>
         <span>
-            Add to Favourites
-            <i className="fa fa-heart"></i>
+            Add to Favourites <i className="fa fa-heart"></i>
         </span>
     </>
     )  
