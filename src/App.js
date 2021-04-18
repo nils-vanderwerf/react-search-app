@@ -2,6 +2,7 @@ import './App.css';
 import React, { Fragment } from 'react'
 import {useState, useEffect} from 'react';
 import {apiKey} from './credentials/keys'
+import {BrowserRouter as Router, Route} from 'react-dom'
 
 import MovieList from "./components/MovieList"
 import Heading from './components/Heading';
