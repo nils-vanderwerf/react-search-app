@@ -1,43 +1,59 @@
-import './App.css';
+import '../css/App.css';
+import '../css/Home.css';
 import React, { Fragment } from 'react'
-import {useState, useEffect} from 'react';
-import {apiKey} from './credentials/keys'
-import {BrowserRouter as Router} from 'react-dom'
+import {useState, useEffect} from 'react'
 
-import MovieList from "./components/MovieList"
-import Heading from './components/Heading';
-import SearchBox from './components/SearchBox';
-import AddFavourites from './components/AddFavourites';
-import RemoveFavourites from './components/RemoveFavourites'
+import {apiKey} from '../credentials/keys'
 
-const App = () => {
+import MovieList from "../components/MovieList"
+import Heading from '../components/Heading';
+import AddFavourites from '../components/AddFavourites';
+import SearchBox from '../components/SearchBox'
+
+const Home = () => {
   const [movies, setMovies] = useState([])
-  const [searchValue, setSearchValue] = useState('')
-  const [favourites, setFavourites] = useState([]) 
+  const [favourites, setFavourites] = useState([])
+  const [query, setQuery] = useState('')
+
   
-  const getMovies = async () => {
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchValue}&plot=short`
+  const getMovies = () => {
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}&plot=short`
 
-    const response = await fetch(url)
-    const data = await response.json().catch(error => console.log(error))
-    console.log(data)
-    
-    if (data.Search) {
-      
-      setMovies(data.Search)
-
-    } else {
-      return (
-      <Fragment>
-        <p>No results for this search</p>
-      </Fragment>
-      )
-    }
+    fetch(url)
+   .then(response => response.json())
+   .then(data => {
+     console.log(data)
+      if (data.Search) {
+        let titles = data.Search.map(key => key.Title)
+        getMoreData(titles)
+      } else {
+        return null
+      }
+    })
+    .catch(error => console.error(error))
+   
   }
-  
-  useEffect(() => {
-    getMovies(searchValue);
-  }, [searchValue]); //called when the state updates
+
+  const getMoreData = (titles) => {
+    console.log(titles)
+    titles.map(thisTitle => {
+      let secondUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${thisTitle}&plot=short` 
+      fetch(secondUrl)
+      .then(response => response.json())
+      .then(data => setMovies([...movies, data]))
+      .catch(error => console.log(error))
+  }
+  )}
+
+    useEffect(() => {
+      getMovies();
+    }, [query]); //called when the state updates
+ 
+  // getSetQuery = (query) => {
+  //   useEffect(() => {
+  //     getMovies(query);
+  //   }, [query]); //called when the state updates
+  // }
   
   const addFavouriteMovie = (movie) => {
     const newFavouritesList = [...favourites, movie]
@@ -47,24 +63,31 @@ const App = () => {
   const removeFavouriteMovie = (movie) => {
     const newFavouritesList = 
     favourites.filter((faveMovie) => faveMovie.imdbID !== movie.imdbID)
-
     setFavourites(newFavouritesList);
-
   }
+
   
    return (
-    //   <div className="container">
-    //     <Heading heading ='Movies'/>
-    //       <div class="components-wrapper">
-    //         <div className="search-favourites">
-    //           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-    //           <Heading heading ='Favourites'/>
-    //           <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie} favouriteComponent={RemoveFavourites}/>
-    //         </div>
-    //         <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddFavourites}/>
-    //       </div>
-    //     </div>
-    )
-}
 
-export default App;
+      <div className="container">
+          <div class="search">
+          <Heading heading ='Search for a film'/>
+
+            <SearchBox searchValue={query} setQuery={setQuery}/>
+            
+          </div>
+          <div class="main-wrapper movie-app">
+            <Heading heading ='Movies'/>
+            <div class="row">
+            <MovieList 
+            movies={movies} 
+            handleFavouritesClick={addFavouriteMovie} 
+            favouriteComponent={AddFavourites}/>
+            </div>
+            <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie}/>
+          </div>
+        </div>
+    )
+   }
+
+export default Home;
