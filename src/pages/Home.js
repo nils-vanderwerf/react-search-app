@@ -40,7 +40,7 @@ const Home = () => {
       let secondUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${thisTitle}&plot=short` 
       fetch(secondUrl)
       .then(response => response.json())
-      .then(data => setMovies([...movies, data]))
+      .then(data => setMovies([data]))
       .catch(error => console.log(error))
   }
   )}
@@ -70,21 +70,20 @@ const Home = () => {
    return (
 
       <div className="container">
-          <div class="search">
+          <div class="sidebar">
           <Heading heading ='Search for a film'/>
 
             <SearchBox searchValue={query} setQuery={setQuery}/>
+            <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie}/>
             
           </div>
-          <div class="main-wrapper movie-app">
+          <div class="main-wrapper">
             <Heading heading ='Movies'/>
-            <div class="row">
             <MovieList 
-            movies={movies} 
-            handleFavouritesClick={addFavouriteMovie} 
-            favouriteComponent={AddFavourites}/>
-            </div>
-            <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie}/>
+              movies={movies} 
+              handleFavouritesClick={addFavouriteMovie} 
+              favouriteComponent={AddFavourites}/>
+             
           </div>
         </div>
     )

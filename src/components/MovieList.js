@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
+import AddFavourites from './AddFavourites'
 
 function MovieList (props) {
-    const FavouriteComponent = props.favouriteComponent;
     console.log('movies:', props.movies)
     if (props.movies.length !== 0) {
     return (
@@ -12,13 +12,13 @@ function MovieList (props) {
                 <div className="movie-container" key={index}>
                     <div className="image-container">
                         <img src={movie.Poster} alt={movie.Title}/>
-                        <div className="overlay" onClick={() => props.handleFavouritesClick(movie)}>
-                            <FavouriteComponent />
+                        <div className="overlay" onClick={() => props.handleFavouritesClick(movie)} >
+                            <AddFavourites/>
                         </div>
                     </div>
                     <div className="card-info-container">
                         <h2>{movie.Title}</h2>
-                        <h2>Director: {movie.Director}</h2>
+                        <h3>Director: {movie.Director}</h3>
                         <h3>Realesed: {movie.Year}</h3>
                         <h3>IMDB Rating: {movie.imdbRating}</h3>
                         <p><strong>Plot:</strong> {movie.Plot}</p>

@@ -1,4 +1,3 @@
-
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Home from './pages/Home'
@@ -9,7 +8,7 @@ import Nav from './components/Nav'
 const App = () => {
 
    return (
-    <div className="container">
+    <div className="app-container">
     
         <div className="main-content">
             {/* <MovieContext.Provider value={{movies, setMovies}}> */}

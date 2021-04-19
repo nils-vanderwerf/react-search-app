@@ -4,59 +4,10 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-.components-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
-
-.image-container {
-  position: relative;
-  transition: transform 0.2s;
-}
-
-.image-container img {
-  width: 100%;
-}
-
-.image-container:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.image-container:hover .overlay {
-  opacity: 1;
-}
-
-.overlay {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  transition: 0.5s ease;
-  opacity: 0;
-  bottom: 0;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.fa-heart {
-  color: red;
-}
-
-
-.movie-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 90px;
-  grid-auto-rows: auto;
-  justify-content: space-between;
-}
-
-.search-favourites .movie-container {
+.sidebar .movie-container {
   padding-left: 50px;
  }
-.search-favourites .movie-list {
+.sidebar .movie-list {
   display: block;
   width: 50%;
   margin-bottom: 30px;
