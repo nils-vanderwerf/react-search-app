@@ -25,10 +25,10 @@ const MovieCard = ({uniqueMovie}) => {
             </div>
             <div className="card-info-container">
                 <h2>{uniqueMovie.Title}</h2>
-                <h3>Director: {movie.Director}</h3>
-                <h3>Released: {movie.Year}</h3>
-                <h3>IMDB Rating: {movie.imdbRating}</h3>
-                <p><strong>Plot:</strong> {movie.Plot}</p>
+                <h3>Director: {uniqueMovie.Director}</h3>
+                <h3>Released: {uniqueMovie.Year}</h3>
+                <h3>IMDB Rating: {uniqueMovie.imdbRating}</h3>
+                <p><strong>Plot:</strong> {uniqueMovie.Plot}</p>
             </div>
         </div> 
     )
