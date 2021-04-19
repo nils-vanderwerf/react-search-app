@@ -1,0 +1,18 @@
+body {
+  background: #f2f2f2;
+  color: #333;
+  font-family: Helvetica, sans-serif;
+}
+
+.sidebar .movie-container {
+  padding-left: 50px;
+ }
+.sidebar .movie-list {
+  display: block;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+i.fa {
+  margin-left: 10px;
+}
