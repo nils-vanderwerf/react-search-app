@@ -17,15 +17,15 @@ const Home = () => {
 
   
   const getMovies = () => {
+
     const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}&plot=short`
 
     fetch(url)
    .then(response => response.json())
    .then(data => {
-     console.log(data)
+     console.log('less data', data)
       if (data.Search) {
-        let titles = data.Search.map(key => key.Title)
-        getMoreData(titles)
+        setMovies(data.Search)
       } else {
         return null
       }
@@ -34,26 +34,21 @@ const Home = () => {
    
   }
 
-  const getMoreData = (titles) => {
-    console.log(titles)
-    titles.map(thisTitle => {
-      let secondUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${thisTitle}&plot=short` 
-      fetch(secondUrl)
-      .then(response => response.json())
-      .then(data => setMovies([data]))
-      .catch(error => console.log(error))
-  }
-  )}
+  // const getMoreData = (titles) => {
+  //   console.log(titles)
+  //   titles.map(thisTitle => {
+  //     let secondUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${thisTitle}&plot=short` 
+  //     fetch(secondUrl)
+  //     .then(response => response.json())
+  //     .then(data => setMovies([data]))
+  //     .catch(error => console.log(error))
+  // }
+  // )}
 
     useEffect(() => {
       getMovies();
     }, [query]); //called when the state updates
- 
-  // getSetQuery = (query) => {
-  //   useEffect(() => {
-  //     getMovies(query);
-  //   }, [query]); //called when the state updates
-  // }
+
   
   const addFavouriteMovie = (movie) => {
     const newFavouritesList = [...favourites, movie]
@@ -61,11 +56,48 @@ const Home = () => {
   }
 
   const removeFavouriteMovie = (movie) => {
-    const newFavouritesList = 
-    favourites.filter((faveMovie) => faveMovie.imdbID !== movie.imdbID)
-    setFavourites(newFavouritesList);
+    const itemsToKeep = 
+    favourites.filter((faveMovie) => faveMovie.imdbID !== movie.imbdID)
+    setFavourites(itemsToKeep);
+    console.log(movie.imdbID)
+    deleteData(movie)
   }
 
+  const postData = (faves) => {
+    
+    let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(faves)
+    };
+    
+    fetch("http://localhost:3000/faveMovies", configObj)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(object) {
+        console.log(object);
+      });
+  }
+
+
+
+  const deleteData = movie =>  {
+  fetch(`http://localhost:3000/faveMovies/q=${movie.imdbID}`, {
+      method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json'
+  }})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(object) {
+      console.log(object);
+    });
+  }
   
    return (
 

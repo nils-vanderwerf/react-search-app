@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom'
+import '../css/Nav.css'
 
 const Nav = () =>{
         return(
-            <nav>
+            <nav id="nav">
                 <Link to='/'>Home</Link>
                 <Link to='/favourites'>Favourites</Link>
                 <Link to='/about'>About</Link>
