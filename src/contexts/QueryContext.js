@@ -1,4 +1,15 @@
 import React, {createContext, useState} from "react"
-const [query, setQuery] = useState('')
-const QueryContext = createContext(query)
-export default QueryContext
+const QueryContext = createContext()
+
+const QueryContextProvider = (props) => {
+    const [query, setQuery] = useState('')
+    
+    return (
+        <QueryContext.Provider value={[query, setQuery]}>
+            {props.children}
+        </QueryContext.Provider>
+    )
+    
+}
+
+export {QueryContext, QueryContextProvider};

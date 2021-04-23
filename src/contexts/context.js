@@ -1,4 +1,3 @@
-import {createContext} from 'react'
-const Context = createContext({})
-
-export default Context;
+import React, {useState, createContext} from "react"
+const [movies, setMovies] = useState([])
+const MovieContext = createContext(movies)
