@@ -1,28 +1,31 @@
+
+import './css/App.css'
 import React, {useState, useEffect, useContext} from 'react'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Nav from './components/Nav'
 
 import Home from './pages/Home'
 import Favourites from './pages/Favourites'
-// import MovieContext from "./contexts/MovieContext"
-import Nav from './components/Nav'
+import Search from './pages/Search'
+import Watched from './pages/Watched'
+import WatchList from './pages/WatchList'
+
 
 import {apiKey} from './credentials/keys'
 
 import {MoviesContext} from './contexts/MoviesContext'
 import {QueryContext} from './contexts/QueryContext'
 import {FavouritesContext} from './contexts/FavouritesContext'
-
+import {WatchedContextProvider} from './contexts/WatchedContext'
+import {WatchListContextProvider} from './contexts/WatchedContext'
+import './lib/font-awesome/css/all.min.css'
 import SideBar from './components/SideBar'
-
-
 
 const App = () => {
   const [query, setQuery] = useContext(QueryContext)  
   const [movies, setMovies] = useContext(MoviesContext)
   const [favourites, setFavourites] = useContext(FavouritesContext)    
-
-  // const [searchQuery, setSearchQuery] = useState('')
 
   const GetMovies = () => {
 
@@ -39,11 +42,7 @@ const App = () => {
           }
         })
         .catch(error => console.error(error))
-  }
-
-  // useEffect(() => {
-  //   setSearchQuery(query)
-  // }, []); //called when the state updates   
+  } 
 
       useEffect(() => {
         GetMovies();
@@ -100,18 +99,31 @@ const App = () => {
     }
    return (
     <div className="app-container">
-        <div className="main-content">
-     
-            <Router>
-                <Nav/>
-                <SideBar/>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/Favourites" component={Favourites}/>
           
+            <Router>
+                <div className="nav">   
+                  <Nav/>
+                </div>
+                <div className="main-content">
+                  <Route exact path="/">
+                    <Home/>
+                  </Route>
+
+                  <Route exact path="/favourites" component={Favourites}>
+                    <Favourites/>
+                  </Route>
+                  
+                  <Route exact path="/watched">
+                    <Watched/>
+                  </Route>
+
+                  <Route exact path="/watchlist">
+                    <WatchList/>
+                  </Route>
+                </div>
+
             </Router>
-            
           </div>
-      </div>
    )
 
 }

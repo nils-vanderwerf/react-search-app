@@ -1,15 +1,44 @@
-import {Link} from 'react-router-dom'
+
 import '../css/Nav.css'
+
+import {Link} from 'react-router-dom'
+import SearchBox from './SearchBox'
 
 const Nav = () =>{
         return(
-                <header id="nav">
-                    <Link to='/'>Home</Link>
-                    <Link to='/favourites'>Favourites</Link>
-                    <Link to='/about'>Watched</Link>
-                    <Link to='/about'>Watch List</Link>
-                    <Link to='/contact'>Contact</Link>
-                </header>
+         <div className="nav-container">
+           <div className="search-box-container">
+               <SearchBox/>
+            </div>
+            <div className="nav-link-container">
+                <nav id="nav">
+                    
+                  <ul className="nav-links">
+                  
+                     <li>
+                        <Link to='/'>Home</Link>
+                     </li>
+
+                     <li>
+                        <Link to='/favourites'>Favourites</Link>
+                     </li>
+                     
+                     <li>
+                     <Link to='/watched'>Watched</Link>         
+                     </li>
+
+                     <li>
+                     <Link to='/watchlist'>Watch List</Link>
+                     </li>
+               
+                  </ul>
+                        
+                     
+                     
+                </nav>
+                </div>
+            </div>
+
         )
 }
 

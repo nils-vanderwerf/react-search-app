@@ -1,35 +1,23 @@
-nav {
-    width: 100vw;
-    background: #333;
+.nav-container{
+    border-right: solid 1px #f2f2f2;
     padding: 1rem 0;
+    height: 100vh;
     }
 
-nav a {
-    color: #fff
+.nav-links li {
+    padding: 1rem;
 }
-@media screen and (max-width: 768px) {
-nav {
-display: block;
-}
-
-nav a {
+.nav-links li a {
     color: #f2f2f2;
     display: inline;
-    font-weight: bold;
-    border-bottom: solid 1px #f2f2f2;
+    font-weight: 900;
     text-align: center;
-}
+    font-size: 24px;
 }
 
-@media screen and (min-width: 768px) {
-    nav {
-        grid-template-columns: repeat(4, 1fr);
-        display: grid;
-        grid-gap: 20px;
-        border-left: solid 1px #f2f2f2;
-    }
-
-    nav a {
-        border-bottom: none;
-    }    
+ul.nav-links {
+    padding: 0;
+}
+.nav-links li {
+    margin: auto;
 }

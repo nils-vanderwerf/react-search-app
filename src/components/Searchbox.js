@@ -2,7 +2,6 @@ import React, {useState, useContext} from 'react';
 import {QueryContext} from '../contexts/QueryContext'
 
 const SearchBox = (props) => {
-
     const [query, setQuery] = useContext(QueryContext)
 
     const onChange = event => {

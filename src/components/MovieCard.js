@@ -1,10 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {apiKey} from '../credentials/keys'
 import AddFavourites from './AddFavourites'
+import AddWatchList from './AddWatchList'
+import AddWatched from './AddWatched'
+import {FavouritesContext} from '../contexts/FavouritesContext'
+import {MoviesContext} from '../contexts/MoviesContext'
 
 
 const MovieCard = ({uniqueMovie}) => {
     const [movie, setMovie] = useState({})
+    const [favourites, setFavourites] = useContext(FavouritesContext)
+    const [movies, setMovies] = useContext(MoviesContext)
     useEffect(() => {
         let url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${uniqueMovie.Title}&plot=short` 
         fetch(url)
@@ -15,8 +21,17 @@ const MovieCard = ({uniqueMovie}) => {
 
         console.log('Movies are', movie)
 
+    const addFavouriteMovie = (movie) => {
+        return (e) => {
+        e.preventDefault();
+        console.log(movie)
+        const newFavouritesList = [...favourites, movie]
+        setFavourites(newFavouritesList)
+        }
+    }
+
     return (
-        <div className="movie-container" key={movie.imdbRating}>
+        <div className="movie-card" key={movie.imdbRating}>
             <div className="image-container">
                 <img src={uniqueMovie.Poster} alt={uniqueMovie.Title}/>
             </div>
@@ -29,21 +44,21 @@ const MovieCard = ({uniqueMovie}) => {
             </div>
 
             <div className="controls">
-                <button className="btn favourite">
+                <button className="btn favourite" onClick={addFavouriteMovie(movie)}>
                 <span>
-                    Add to Favourites <i className="fa fa-heart"></i>
+                    <AddFavourites/>
                 </span>
                 </button>
 
                 <button className="btn watchlist">
                 <span>
-                    Add to Watch List <i className="fa"></i>
+                    <AddWatchList/>
                 </span>
                 </button>
 
                 <button className="btn watched">
                 <span>
-                    Add to Watched <i className="fa"></i>
+                    <AddWatched/>
                 </span>
                 </button>
             </div>

@@ -1,3 +1,4 @@
+import '../css/Heading.css'
 import React from 'react';
 
 const Heading = (props) => {

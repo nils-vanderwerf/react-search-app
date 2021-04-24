@@ -2,11 +2,11 @@ import React from 'react';
 import {Fragment} from 'react'
 import '../css/add-favourites.css'
 
-const AddFavourites = () => {
+const AddFavourites = ({handleFavouritesClick}) => {
     return (
     <>
         <span>
-            Add to Favourites <i className="fa fa-heart"></i>
+            Add to Favourites <i className="fa fa-heart" onClick={handleFavouritesClick}></i>
         </span>
     </>
     )  

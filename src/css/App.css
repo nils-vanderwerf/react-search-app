@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
-  background: #f2f2f2;
-  color: #333;
-  font-family: Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  font-family: 'Noto Sans', Helvetica, sans-serif;
 }
 
-.sidebar .movie-container {
-  padding-left: 50px;
- }
-.sidebar .movie-list {
-  display: block;
-  width: 50%;
-  margin-bottom: 30px;
+.app-container {
+  max-width: 1600px;
+  padding: 60px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 60px;
 }
 
-i.fa {
-  margin-left: 10px;
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.main-content {
+  display: grid;
+}
+@media screen and (min-width: 768px) {
+ 
 }
