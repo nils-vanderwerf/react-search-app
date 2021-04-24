@@ -1,11 +1,11 @@
 import React from 'react';
 import {Fragment} from 'react'
 
-const AddWatchList = ({handleFavouritesClick}) => {
+const AddWatchList = ({handleWatchedClick}) => {
     return (
     <>
         <span>
-            Add to Watched <i className="fa fa-check" onClick={handleFavouritesClick}></i>
+            Add to Watched <i className="fa fa-check"></i>
         </span>
     </>
     )  

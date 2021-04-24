@@ -5,12 +5,18 @@ import AddWatchList from './AddWatchList'
 import AddWatched from './AddWatched'
 import {FavouritesContext} from '../contexts/FavouritesContext'
 import {MoviesContext} from '../contexts/MoviesContext'
+import {WatchListContext} from '../contexts/WatchListContext'
+import {WatchedContext} from '../contexts/WatchedContext'
+
 
 
 const MovieCard = ({uniqueMovie}) => {
     const [movie, setMovie] = useState({})
     const [favourites, setFavourites] = useContext(FavouritesContext)
     const [movies, setMovies] = useContext(MoviesContext)
+    const [watched, setWatched] = useContext(WatchedContext)
+    const [watchList, setWatchList] = useContext(WatchListContext)
+
     useEffect(() => {
         let url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${uniqueMovie.Title}&plot=short` 
         fetch(url)
@@ -26,7 +32,28 @@ const MovieCard = ({uniqueMovie}) => {
         e.preventDefault();
         console.log(movie)
         const newFavouritesList = [...favourites, movie]
+        console.log(newFavouritesList)
         setFavourites(newFavouritesList)
+        }
+    }
+
+    const addToWatched = (movie) => {
+        return (e) => {
+        e.preventDefault();
+        console.log(movie)
+        const newWatched = [...watched, movie]
+        console.log('newWatched:', newWatched)
+        setWatched(newWatched)
+        }
+    }
+
+    const addToWatchList = (movie) => {
+        return (e) => {
+        e.preventDefault();
+        console.log(movie)
+        const newWatchList = [...watchList, movie]
+        console.log('newWatchList:', newWatchList)
+        setWatchList(newWatchList)
         }
     }
 
@@ -50,13 +77,13 @@ const MovieCard = ({uniqueMovie}) => {
                 </span>
                 </button>
 
-                <button className="btn watchlist">
+                <button className="btn watchlist" onClick={addToWatchList(movie)}>
                 <span>
                     <AddWatchList/>
                 </span>
                 </button>
 
-                <button className="btn watched">
+                <button className="btn watched" onClick={addToWatched(movie)}>
                 <span>
                     <AddWatched/>
                 </span>
