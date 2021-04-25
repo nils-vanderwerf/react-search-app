@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server --watch=true src/json-data/faveMovies.json --port 3000"
+    "json-server": "json-server --watch=true src/json-data/savedMovies.json --port 8000"
   },
   "eslintConfig": {
     "extends": [

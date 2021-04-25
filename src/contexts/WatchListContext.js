@@ -2,10 +2,10 @@ import React, {createContext, useState} from "react"
 const WatchListContext = createContext()
 
 const WatchListContextProvider = (props) => {
-    const [watchlist, setWatchList] = useState([])
+    const [watchList, setWatchList] = useState([])
     
     return (
-        <WatchListContext.Provider value={[watchlist, setWatchList]}>
+        <WatchListContext.Provider value={[watchList, setWatchList]}>
             {props.children}
         </WatchListContext.Provider>
     )

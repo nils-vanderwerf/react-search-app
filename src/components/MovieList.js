@@ -16,7 +16,7 @@ function MovieList(){
                 {movies.map((movie, index) => {
                     //Check if there is no poster available
                     return (movie.Poster !== 'N/A') ? 
-                    <MovieCard key={movie.Title}  uniqueMovie={movie} index={index}/> 
+                    <MovieCard key={movie.Title}  uniqueMovie={movie}/> 
                     : 
                     <div className="filler-poster" />
                 })  
