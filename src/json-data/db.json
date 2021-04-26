@@ -1,11 +1,144 @@
 {
   "favourites": [
-    
+    {
+      "Title": "Little Miss Sunshine",
+      "Year": "2006",
+      "imdbID": "tt0449059",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTgzNTgzODU0NV5BMl5BanBnXkFtZTcwMjEyMjMzMQ@@._V1_SX300.jpg",
+      "id": 1
+    },
+    {
+      "Title": "Star Wars: Episode IV - A New Hope",
+      "Year": "1977",
+      "imdbID": "tt0076759",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "id": 2
+    },
+    {
+      "Title": "Star Trek",
+      "Year": "2009",
+      "imdbID": "tt0796366",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg",
+      "id": 3
+    },
+    {
+      "Title": "Avenge",
+      "Year": "2014",
+      "imdbID": "tt0961036",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjgwMzM1OTg3OV5BMl5BanBnXkFtZTcwNDU2NjU2Nw@@._V1_SX300.jpg",
+      "id": 4
+    },
+    {
+      "Title": "Star Wars: Episode II - Attack of the Clones",
+      "Year": "2002",
+      "imdbID": "tt0121765",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
+      "id": 5
+    },
+    {
+      "Title": "The Lego Movie",
+      "Year": "2014",
+      "imdbID": "tt1490017",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg",
+      "id": 6
+    }
   ],
   "watchlist": [
-    
+    {
+      "Title": "Grey Gardens",
+      "Year": "1975",
+      "imdbID": "tt0073076",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ0YzYwMzUtZjc5NS00OGQ3LWJjMmUtYmY5N2M3ZTA0NTY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "id": 1
+    },
+    {
+      "Title": "Star Wars: Episode IV - A New Hope",
+      "Year": "1977",
+      "imdbID": "tt0076759",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "id": 2
+    },
+    {
+      "Title": "Star Trek",
+      "Year": "2009",
+      "imdbID": "tt0796366",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg",
+      "id": 3
+    },
+    {
+      "Title": "Harry Potter and the Chamber of Secrets",
+      "Year": "2002",
+      "imdbID": "tt0295297",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg",
+      "id": 4
+    },
+    {
+      "Title": "Avengers: Infinity War",
+      "Year": "2018",
+      "imdbID": "tt4154756",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+      "id": 5
+    },
+    {
+      "Title": "Star Wars: Episode VIII - The Last Jedi",
+      "Year": "2017",
+      "imdbID": "tt2527336",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
+      "id": 6
+    },
+    {
+      "Title": "The Lego Batman Movie",
+      "Year": "2017",
+      "imdbID": "tt4116284",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTcyNTEyOTY0M15BMl5BanBnXkFtZTgwOTAyNzU3MDI@._V1_SX300.jpg",
+      "id": 7
+    }
   ],
   "watched": [
-    
+    {
+      "Title": "Captain America: The First Avenger",
+      "Year": "2011",
+      "imdbID": "tt0458339",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg",
+      "id": 1
+    },
+    {
+      "Title": "Varg Veum - De døde har det godt",
+      "Year": "2012",
+      "imdbID": "tt2182237",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTY3Njc4MzYyN15BMl5BanBnXkFtZTcwNzc0Mzc0Nw@@._V1_SX300.jpg",
+      "id": 2
+    },
+    {
+      "Title": "Ultimate Avengers II",
+      "Year": "2006",
+      "imdbID": "tt0803093",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      "id": 3
+    },
+    {
+      "Title": "Lego Star Wars II: The Original Trilogy",
+      "Year": "2006",
+      "imdbID": "tt0827187",
+      "Type": "game",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMmM3NjM3ZDMtZDBiZi00M2E5LWFkZmEtM2U1ODZkOWE4YmVkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg",
+      "id": 4
+    }
   ]
 }

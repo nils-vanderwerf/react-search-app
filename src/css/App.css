@@ -15,6 +15,25 @@ body {
   grid-gap: 60px;
 }
 
+.main-wrapper {
+  border-width: 3px;
+}
+.main-wrapper.home {
+  border-left: #66D9AF;
+}
+
+.main-wrapper.favourites {
+  border-left: #A223D9;
+}
+
+.main-wrapper.watchlist {
+  border-left: #BF391B;
+}
+
+.main-wrapper.watched {
+  border-left: #ff8300;
+}
+
 a {
   text-decoration: none;
 }

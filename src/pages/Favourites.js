@@ -1,4 +1,5 @@
 import '../css/App.css';
+// import '../css/Themes.css'
 import React, {useContext, useEffect} from 'react'
 import Heading from '../components/Heading'
 import MovieList from '../components/MovieList'
@@ -21,8 +22,7 @@ const Favourites = () => {
     }, [] )
 
     return (
-      <div className="main-wrapper">
-      <h1>Test</h1>
+      <div className="main-wrapper favourites">
       <Heading heading ='Favourites'/>
       <div className="movie-list-wrapper">
           {

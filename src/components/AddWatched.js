@@ -37,7 +37,7 @@ const postWatchedData = (watchedFilms) => {
     return (
       <button className="btn watchlist tooltip" onClick={AddToWatchedDB} value={movie.id}>
           <span class="tooltiptext">Add to Watched</span>
-          <span><i className="fa fa-eye"></i></span>
+          <span><i className="fa fa-check"></i></span>
       </button>
     )  
 }

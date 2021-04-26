@@ -53,8 +53,8 @@ const App = () => {
                 <div className="main-content">
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/favourites" component={Favourites}/>
-                  <Route exact path="/watched" component={Watched}></Route>
                   <Route exact path="/watchlist" component={WatchList}></Route>
+                  <Route exact path="/watched" component={Watched}></Route>
                 </div>
             </Router>
           </div>
