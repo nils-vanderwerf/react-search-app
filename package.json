@@ -1,5 +1,6 @@
 {
   "name": "react-search-app",
+  "homepage": "https://nils-vanderwerf.github.io/react-search-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,16 +8,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "bootstrap": "^4.6.0",
     "g": "^2.0.1",
     "json-server": "^0.16.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-googlemaps": "^0.4.0",
-    "react-instantsearch-dom": "^6.10.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-search-field": "^1.2.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -24,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server --watch=true src/json-data/db.json --port 8000"
+    "json-server": "json-server --watch=true src/json-data/db.json --port 8000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
