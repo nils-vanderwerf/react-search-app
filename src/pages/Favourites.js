@@ -1,32 +1,39 @@
 import '../css/App.css';
 import React, {useContext, useEffect} from 'react'
 import Heading from '../components/Heading'
-import {FavouritesContext} from '../contexts/FavouritesContext'
 import MovieList from '../components/MovieList'
-import AddFavourites from '../components/AddFavourites';
-
-
+import {FavouritesContext} from '../contexts/FavouritesContext'
 
 const Favourites = () => {
-    const [favourites, setFavourites] = useContext(FavouritesContext)
+  const [favourites, setFavourites] = useContext(FavouritesContext)
 
-    const fetchFavourites = () => {
-        fetch('http://localhost:8000/favourites/')
-        .then(response => response.json())
-        .then(data => {
-            setFavourites(data)
-        }) 
-        .catch(error => console.log(error))
-  }
+  const fetchFavourites = () => {
+    fetch('http://localhost:8000/favourites/')
+    .then(response => response.json())
+    .then(data => {
+        setFavourites(data)
+    }) 
+    .catch(error => console.log(error))
+}
 
-  useEffect(fetchFavourites, [])
-
+  useEffect(() => {
+    fetchFavourites()
+    }, [] )
 
     return (
-        <div class="favourites-container">
-            <Heading heading ='Favourites'/>
-            <MovieList movies={favourites}/>  
-        </div>
+      <div className="main-wrapper">
+      <h1>Test</h1>
+      <Heading heading ='Favourites'/>
+      <div className="movie-list-wrapper">
+          {
+              
+              favourites ?
+              <MovieList moviesToShow={favourites}/> :
+              <p>Add movies to your favourites.</p>
+          }
+          
+      </div>
+  </div>
     )
 }
 

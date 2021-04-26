@@ -24,17 +24,15 @@ const Nav = () =>{
                      </li>
                      
                      <li>
-                     <Link to='/watched'>Watched</Link>         
+                        <Link to='/watched'>Watched</Link>         
                      </li>
 
                      <li>
-                     <Link to='/watchlist'>Watch List</Link>
+                        <Link to='/watchlist'>Watch List</Link>
                      </li>
                
                   </ul>
                         
-                     
-                     
                 </nav>
                 </div>
             </div>

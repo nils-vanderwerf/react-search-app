@@ -1,7 +1,6 @@
 .movie-list {
     display: grid;
-    
-
+    row-gap: 30px;
 }
 
 .container {
@@ -9,7 +8,9 @@
 }
 
 .movie-list {
-    grid-gap: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 60px;
+    grid-template-rows: auto;
 }
 
 @media (min-width: 992px) {

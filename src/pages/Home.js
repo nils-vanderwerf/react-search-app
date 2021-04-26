@@ -1,19 +1,19 @@
 import '../css/App.css';
 import '../css/Home.css';
 import React, {useContext} from 'react'
-import MovieList from "../components/MovieList"
 import Heading from '../components/Heading';
-import AddFavourites from "../components/AddFavourites"
-import FavouritesContext from '../contexts/FavouritesContext'
+import MovieList from "../components/MovieList"
 import {MoviesContext} from '../contexts/MoviesContext'
 
 const Home = () => {
-  const [movies, setMovies] = useContext(MoviesContext)
-  return (
+  const [movies] = useContext(MoviesContext)
 
+  return (
     <div class="main-wrapper">
-      <Heading heading ='Search for movies'/>
-      <MovieList movies={movies}/>  
+        <Heading heading ='Search for movies'/>
+          <div className="movie-list-wrapper">
+            <MovieList moviesToShow={movies}/>
+        </div>
     </div>
 
     )

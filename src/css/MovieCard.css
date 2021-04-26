@@ -1,0 +1,10 @@
+.movie-card {
+    display: grid;
+    grid-auto-rows: 1fr auto auto;
+    grid-row-gap: 30px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} 

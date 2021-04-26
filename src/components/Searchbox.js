@@ -1,5 +1,7 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import {QueryContext} from '../contexts/QueryContext'
+import '../css/SearchBox.css'
+
 
 const SearchBox = (props) => {
     const [query, setQuery] = useContext(QueryContext)
@@ -11,9 +13,11 @@ const SearchBox = (props) => {
 
         return (
             <div className="search-box">
-                <input className="search" value={query} onChange={onChange}
-                    placeholder="Type in a movie to start" >
-                </input> 
+                <input
+                    className="search" 
+                    value={query} onChange={onChange}
+                    placeholder="Type in a movie to start"
+                /> 
             </div>
         )
     }

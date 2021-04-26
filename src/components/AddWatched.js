@@ -3,16 +3,16 @@ import '../lib/font-awesome/css/all.min.css'
 import {WatchedContext} from '../contexts/WatchedContext'
 
 
-const AddWatchedMovie = (movie) => {
-    console.log('Watched movie', movie)
-    const [watched, setWatched] = useContext(WatchedContext)
-    return (e) => {
-        e.preventDefault();
-        const newWatchedList = [...watched, movie]
-        setFavourites(newWatchedList)
-        postWatchedData(movie)
-    }
-}
+const AddWatched = ({movie}) => {
+
+  const [watched, setWatched] = useContext(WatchedContext)
+
+    const AddToWatchedDB = (event) => {
+          event.preventDefault();
+          const newWatchedList = [...watched, movie]
+          setWatched(newWatchedList)
+          postWatchedData(movie)
+        }
 
 const postWatchedData = (watchedFilms) => {
     let configObj = {
@@ -29,19 +29,16 @@ const postWatchedData = (watchedFilms) => {
       .then(function(response) {
         return response.json();
       })
-      .then(function(object) {
-        console.log(object);
+      .then(data => {
+        console.log(data);
       });
   }
 
-const AddWatched = ({watched}) => {
-    
     return (
-        <button className="btn favourite" onClick={AddWatchedMovie(movie)}>
-        <span>
-            Add to Favourites <i className="fa fa-heart"></i>
-        </span>
-        </button>
+      <button className="btn watchlist tooltip" onClick={AddToWatchedDB} value={movie.id}>
+          <span class="tooltiptext">Add to Watched</span>
+          <span><i className="fa fa-eye"></i></span>
+      </button>
     )  
 }
 
