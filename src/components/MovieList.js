@@ -2,7 +2,6 @@ import MovieCard from './MovieCard'
 import '../css/MovieList.css'
 
 function MovieList({moviesToShow: movies}){
-
     if (movies.length > 0) {
     return (
         <div className="container">

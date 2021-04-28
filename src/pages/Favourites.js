@@ -1,9 +1,9 @@
 import '../css/App.css';
-// import '../css/Themes.css'
 import React, {useContext, useEffect} from 'react'
 import Heading from '../components/Heading'
 import MovieList from '../components/MovieList'
 import {FavouritesContext} from '../contexts/FavouritesContext'
+
 
 const Favourites = () => {
   const [favourites, setFavourites] = useContext(FavouritesContext)
@@ -17,6 +17,12 @@ const Favourites = () => {
     .catch(error => console.log(error))
 }
 
+const removeFavouriteMovie = (movie) => {
+  const newFavouritesList = favourites.filter(
+    (favourite) => favourite.imdbID !== movie.imdbID
+  );
+}
+
   useEffect(() => {
     fetchFavourites()
     }, [] )
@@ -28,7 +34,7 @@ const Favourites = () => {
           {
               
               favourites ?
-              <MovieList moviesToShow={favourites}/> :
+              <MovieList moviesToShow={favourites}  /> :
               <p>Add movies to your favourites.</p>
           }
           
