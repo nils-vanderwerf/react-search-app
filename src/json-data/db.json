@@ -1,5 +1,70 @@
 {
-  "favourites": [],
+  "favourites": [
+    {
+      "Title": "Harry Potter and the Goblet of Fire",
+      "Year": "2005",
+      "imdbID": "tt0330373",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg",
+      "id": 4
+    },
+    {
+      "Title": "Harry Potter and the Order of the Phoenix",
+      "Year": "2007",
+      "imdbID": "tt0373889",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTM0NTczMTUzOV5BMl5BanBnXkFtZTYwMzIxNTg3._V1_SX300.jpg",
+      "id": 5
+    },
+    {
+      "Title": "Harry Potter and the Deathly Hallows: Part 1",
+      "Year": "2010",
+      "imdbID": "tt0926084",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_SX300.jpg",
+      "id": 6
+    },
+    {
+      "Title": "Harry Potter and the Sorcerer's Stone",
+      "Year": "2001",
+      "imdbID": "tt0241527",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+      "id": 7
+    },
+    {
+      "Title": "Harry Potter and the Chamber of Secrets",
+      "Year": "2002",
+      "imdbID": "tt0295297",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg",
+      "id": 8
+    },
+    {
+      "Title": "Talladega Nights: The Ballad of Ricky Bobby",
+      "Year": "2006",
+      "imdbID": "tt0415306",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzAzOTk1OTIyM15BMl5BanBnXkFtZTcwNDIzNTQzMQ@@._V1_SX300.jpg",
+      "id": 9
+    },
+    {
+      "Title": "Jay and Silent Bob Strike Back",
+      "Year": "2001",
+      "imdbID": "tt0261392",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BY2EyYWEwZmQtZWU0Yy00M2Y3LThiZTktOTQxZDUxY2ZjOTYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "id": 10
+    },
+    {
+      "Title": "Jay and Silent Bob Strike Back",
+      "Year": "2001",
+      "imdbID": "tt0261392",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BY2EyYWEwZmQtZWU0Yy00M2Y3LThiZTktOTQxZDUxY2ZjOTYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "id": 11
+    }
+  ],
   "watchlist": [],
   "watched": []
 }

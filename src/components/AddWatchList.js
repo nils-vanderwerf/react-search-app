@@ -3,7 +3,9 @@ import '../lib/font-awesome/css/all.min.css'
 import {WatchListContext} from '../contexts/WatchListContext'
 
 const AddWatchList = ({movie}) => {
-    const [watchList, setWatchList] = useContext(WatchListContext)
+
+    const [watchList, setWatchList] =  useContext(WatchListContext)
+
         const AddToWatchListDB = (event) => {
             event.preventDefault();
             const newWatchList = [...watchList, movie]

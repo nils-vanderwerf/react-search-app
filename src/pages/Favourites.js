@@ -34,7 +34,8 @@ const removeFavouriteMovie = (movie) => {
           {
               
               favourites ?
-              <MovieList moviesToShow={favourites}  /> :
+              <MovieList 
+              moviesToShow={favourites}/> :
               <p>Add movies to your favourites.</p>
           }
           

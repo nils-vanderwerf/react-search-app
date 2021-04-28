@@ -5,7 +5,7 @@ import {WatchedContext} from '../contexts/WatchedContext'
 
 const AddWatched = ({movie}) => {
 
-  const [watched, setWatched] = useContext(WatchedContext)
+  const {watched, setWatched} = useContext(WatchedContext)
 
     const AddToWatchedDB = (event) => {
           event.preventDefault();

@@ -5,7 +5,9 @@ import MovieList from '../components/MovieList'
 import {WatchListContext} from '../contexts/WatchListContext'
 
 const WatchList = () => {
-  const [watchList, setWatchList] = useContext(WatchListContext)
+  const {watchListMovie, isMovieOnWatchList} = useContext(WatchListContext)
+    const [watchList, setWatchList] = watchListMovie
+    const [isOnWatchList, setIsOnWatchList] = isMovieOnWatchList
 
   const fetchWatchList = () => {
     fetch('http://localhost:8000/watchlist/')

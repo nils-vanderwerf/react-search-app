@@ -5,8 +5,9 @@ const FavouritesContextProvider = (props) => {
     const [favourites, setFavourites] = useState([])
     
     return (
-        <FavouritesContext.Provider value={[favourites, setFavourites]}>
-            {props.children}
+        <FavouritesContext.Provider 
+            value={[favourites, setFavourites]}>
+                {props.children}
         </FavouritesContext.Provider>
     )
     

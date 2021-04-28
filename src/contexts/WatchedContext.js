@@ -5,8 +5,9 @@ const WatchedContextProvider = (props) => {
     const [watched, setWatched] = useState([])
     
     return (
-        <WatchedContext.Provider value={[watched, setWatched]}>
-            {props.children}
+        <WatchedContext.Provider 
+            value={[watched, setWatched]}>
+                {props.children}
         </WatchedContext.Provider>
     )
     

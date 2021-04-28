@@ -6,16 +6,17 @@ import {FavouritesContext} from '../contexts/FavouritesContext'
 const AddFavourites = ({movie}) => {
 
   const [favourites, setFavourites] = useContext(FavouritesContext)
-    
+  
   const isMovieFaved = (event) => {
       event.preventDefault();   
       //check for duplicates
-      const movieInArray = favourites.find(element => element.imdbID === movie.imdbID)
-        if (!movieInArray) {
+      // const movieInArray = 
+      //favourites.find(element => element.imdbID === movie.imdbID)
+        // if (!movieInArray) {
           const newFavesList = [...favourites, movie]
           setFavourites(newFavesList)
           postFaveData(movie)
-        }
+        // }
       }
 
     const postFaveData = (faveFilms) => {
@@ -49,7 +50,6 @@ const AddFavourites = ({movie}) => {
             <span class="tooltiptext">Add to Favourites</span>
             <span><i className="fa fa-heart"></i></span>
         </button>
-
     )  
 }
 

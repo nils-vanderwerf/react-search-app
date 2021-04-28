@@ -1,10 +1,22 @@
 import '../css/App.css'
 import '../css/MovieCard.css'
+import React, {useContext, useState} from 'react'
 import AddFavourites from './AddFavourites'
+import RemoveFavourites from './RemoveFavourites'
+
 import AddWatchList from './AddWatchList'
 import AddWatched from './AddWatched'
+import Watched from '../pages/Watched'
+import {FavouritesContext} from '../contexts/FavouritesContext'
+import {WatchedContext} from '../contexts/WatchedContext'
+import {WatchListContext} from '../contexts/WatchListContext'
 
-const MovieCard = ({movie}) => {
+
+const MovieCard = ({id, movie, key, isFavourited}) => {
+    const [favourites, setFavourites] = useContext(FavouritesContext)
+    const [watched, setWatched] = useContext(WatchedContext)
+
+    const movieIsFave = favourites.find(element => element.imdbID === movie.imdbID)
     return (
         <div className="movie-card" key={movie.imdbID}>
             <div className="image-container">
@@ -19,7 +31,9 @@ const MovieCard = ({movie}) => {
             </div>
 
             <div className="controls">
-                    <AddFavourites movie={movie}/>
+                    {
+                    
+                    movieIsFave ?  <RemoveFavourites movie={movie}/> : <AddFavourites movie={movie}/> }
                     <AddWatchList movie={movie}/>
                     <AddWatched movie={movie}/>
             </div>
