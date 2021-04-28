@@ -7,17 +7,18 @@ const AddFavourites = ({movie}) => {
 
   const [favourites, setFavourites] = useContext(FavouritesContext)
   
-  const isMovieFaved = (event) => {
-      event.preventDefault();   
-      //check for duplicates
-      // const movieInArray = 
-      //favourites.find(element => element.imdbID === movie.imdbID)
-        // if (!movieInArray) {
-          const newFavesList = [...favourites, movie]
-          setFavourites(newFavesList)
-          postFaveData(movie)
-        // }
+  const addToFaves = (event) => {
+      event.preventDefault();  
+      const movieIsFave = favourites.find(element => element.imdbID === movie.imdbID)
+      if (movieIsFave) {
+        return null
       }
+      else { 
+      const newFavesList = [...favourites, movie]
+      setFavourites(newFavesList)
+      postFaveData(movie)
+      }
+    }
 
     const postFaveData = (faveFilms) => {
         let configObj = {
@@ -46,7 +47,7 @@ const AddFavourites = ({movie}) => {
 
 
     return (
-        <button className="btn favourite tooltip" onClick={isMovieFaved} value={movie.id}>
+        <button className="btn favourite tooltip" onClick={addToFaves} value={movie.id}>
             <span class="tooltiptext">Add to Favourites</span>
             <span><i className="fa fa-heart"></i></span>
         </button>

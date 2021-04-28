@@ -17,12 +17,6 @@ const Favourites = () => {
     .catch(error => console.log(error))
 }
 
-const removeFavouriteMovie = (movie) => {
-  const newFavouritesList = favourites.filter(
-    (favourite) => favourite.imdbID !== movie.imdbID
-  );
-}
-
   useEffect(() => {
     fetchFavourites()
     }, [] )

@@ -17,6 +17,10 @@ button {
     -moz-appearance: none;
 }
 
+.fa {
+    transition: color 0.5s;
+}
+
 button:hover,
 button:focus {
     background: #585858;
@@ -47,6 +51,15 @@ button:active {
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+  }
+
+  .remove-favourite .fa-heart {
+      color: red;
+      
+  }
+
+  .green-list .fa, .green-watched .fa {
+      color: green;
   }
 
   .tooltip:hover .tooltiptext {

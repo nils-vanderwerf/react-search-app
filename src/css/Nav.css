@@ -1,20 +1,41 @@
 .nav-container{
-    border-right: solid 1px #f2f2f2;
+
     padding: 1rem 0;
     height: 100%;
     }
+
 
 .nav-links li {
     padding: 1rem;
 }
 .nav-links li a {
     color: #f2f2f2;
+    transition: color 0.5s;
     display: inline;
     font-weight: 900;
     text-align: center;
     font-size: 24px;
 }
 
+.home.link-item.selected {
+    color:rgb(27, 171, 228);
+    border-bottom: solid 3px rgb(27, 171, 228);
+}
+
+.favourites.link-item.selected {
+    color:#F24405;
+    border-bottom: solid 3px #F24405;
+}
+
+.watchlist.link-item.selected {
+    color:#AB60BF;
+    border-bottom: solid 3px #AB60BF;
+}
+
+.watched.link-item.selected {
+    color: #F2D43D;
+    border-bottom: solid 3px #F2D43D;
+}
 ul.nav-links {
     padding: 0;
 }

@@ -6,7 +6,7 @@ const AddWatchList = ({movie}) => {
 
     const [watchList, setWatchList] =  useContext(WatchListContext)
 
-        const AddToWatchListDB = (event) => {
+        const addToWatchList = (event) => {
             event.preventDefault();
             const newWatchList = [...watchList, movie]
             setWatchList(newWatchList)
@@ -33,9 +33,9 @@ const AddWatchList = ({movie}) => {
             }
 
             return (
-                <button className="btn watchlist tooltip" onClick={AddToWatchListDB} value={movie.id}>
+                <button className="btn watchlist tooltip" onClick={addToWatchList} value={movie.id}>
                     <span class="tooltiptext">Add to Watch List</span>
-                    <span><i className="fa fa-eye"></i></span>
+                    <span><i className="fa fa-list"></i></span>
                 </button>
             )  
 }

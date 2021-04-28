@@ -19,8 +19,7 @@ import './lib/font-awesome/css/all.min.css'
 
 const App = () => {
   const [query, setQuery] = useContext(QueryContext) 
-  const [movies, setMovies] = useContext(MoviesContext)
- 
+  const [movies, setMovies] = useContext(MoviesContext) 
 
   const GetMovies = () => {
 

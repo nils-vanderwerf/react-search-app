@@ -16,24 +16,23 @@ const RemoveFavourites = ({movie}) => {
         deleteFromDB()
         }
 
-        const deleteFromDB = () => {
-            console.log("this movie", movie)
-            let configObj = 
-            
-            fetch(`http://localhost:8000/favourites/${movie.id}`, {
-                method: "DELETE",
-              })
-              .then(function(response) {
-                return response.json();
-              })
-              .then(function(object) {
-                console.log(object);
-              });
-          }
+    const deleteFromDB = () => {
+
+        fetch(`http://localhost:8000/favourites/${movie.id}`, {
+            method: "DELETE",
+            })
+            .then(function(response) {
+            return response.json();
+            })
+            .then(function(object) {
+            console.log(object);
+            });
+        }
+
     return (
-        <button className="btn favourite tooltip" onClick={RemoveCard} value={movie.id}>
+        <button className="btn remove-favourite tooltip" onClick={RemoveCard} value={movie.id}>
             <span class="tooltiptext">Remove from Favourites</span>
-            <span><i className="fa fa-times"></i></span>
+            <span><i className="fa fa-heart"></i></span>
         </button>
     )
 }

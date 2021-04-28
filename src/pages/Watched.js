@@ -6,9 +6,7 @@ import MovieList from '../components/MovieList'
 
 const Watched = () => {
     
-    const {watch, isMovieWatched} = useContext(WatchedContext)
-    const [watched, setWatched] = watch
-    const [isWatched, setIsWatched] = isMovieWatched
+    const [watched, setWatched] = useContext(WatchedContext)
 
     const fetchWatched = () => {
         fetch('http://localhost:8000/watched/')

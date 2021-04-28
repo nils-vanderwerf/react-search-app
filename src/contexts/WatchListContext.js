@@ -3,8 +3,7 @@ const WatchListContext = createContext()
 
 const WatchListContextProvider = (props) => {
     const [watchList, setWatchList] = useState([])
-    const [isOnWatchList, setIsOnWatchList] = useState(false)
-    
+
     return (
         <WatchListContext.Provider 
             value= {[watchList, setWatchList]}>

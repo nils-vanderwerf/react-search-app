@@ -1,7 +1,7 @@
 
 import '../css/Nav.css'
 
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import SearchBox from './SearchBox'
 
 const Nav = () =>{
@@ -16,23 +16,40 @@ const Nav = () =>{
                   <ul className="nav-links">
                   
                      <li>
-                        <Link to='/'>Home</Link>
+                        <NavLink exact 
+                           className="home link-item" 
+                           to='/' 
+                           activeClassName="selected">Home
+                        </NavLink>
                      </li>
 
                      <li>
-                        <Link to='/favourites'>Favourites</Link>
+                        <NavLink exact 
+                        className="favourites link-item"
+                           to='/favourites' 
+                           activeClassName="selected">
+                              Favourites
+                        </NavLink>
                      </li>
 
                      <li>
-                        <Link to='/watchlist'>Watch List</Link>
-                     </li>
-                     
-                     <li>
-                        <Link to='/watched'>Watched</Link>         
+                        <NavLink exact
+                        className="watchlist link-item"
+                            to='/watchlist' 
+                            activeClassName="selected">
+                               Watch List
+                        </NavLink>
                      </li>
 
-                     
-               
+                     <li>
+                        <NavLink exact 
+                        className="watched link-item"
+                           to='/watched' 
+                           activeClassName="selected">
+                              Watched
+                        </NavLink>         
+                     </li>
+
                   </ul>
                         
                 </nav>
