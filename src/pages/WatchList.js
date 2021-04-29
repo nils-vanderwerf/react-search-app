@@ -22,17 +22,17 @@ const WatchList = () => {
 
     return (
       <div className="main-wrapper">
-      <Heading heading ='Watch List'/>
-      <div className="movie-list-wrapper">
-          {
-              
+          <Heading heading ='Watch List'/>
+          <div className="movie-list-wrapper">
+              {
               watchList ?
-              <MovieList moviesToShow={watchList}/> :
-              <p>Add movies to your watch list.</p>
-          }
-          
+                  <MovieList 
+                    moviesToShow={watchList}/> 
+                  :
+                  <p>Add movies to your watch list.</p>
+              }    
+          </div>
       </div>
-  </div>
     )
 }
 

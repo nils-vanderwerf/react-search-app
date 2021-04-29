@@ -8,9 +8,16 @@ const AddWatchList = ({movie}) => {
 
         const addToWatchList = (event) => {
             event.preventDefault();
-            const newWatchList = [...watchList, movie]
-            setWatchList(newWatchList)
-            postWatchListData(movie)
+            const movieIsInWatched = watchList.find(element => 
+                element.imdbID === movie.imdbID)
+              if (movieIsInWatched) {
+                return null
+              } 
+            else {
+                const newWatchList = [...watchList, movie]
+                setWatchList(newWatchList)
+                postWatchListData(movie)
+            }
         }
 
         const postWatchListData = (watchList) => {
@@ -33,8 +40,8 @@ const AddWatchList = ({movie}) => {
             }
 
             return (
-                <button className="btn watchlist tooltip" onClick={addToWatchList} value={movie.id}>
-                    <span class="tooltiptext">Add to Watch List</span>
+                <button className="btn add-watchlist tooltip" onClick={addToWatchList} value={movie.id}>
+                    <span className="tooltiptext">Add to Watch List</span>
                     <span><i className="fa fa-list"></i></span>
                 </button>
             )  

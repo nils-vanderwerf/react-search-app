@@ -1,32 +1,23 @@
 {
   "favourites": [
     {
-      "Title": "Fruitvale Station",
-      "Year": "2013",
-      "imdbID": "tt2334649",
+      "Title": "Harry Potter and the Prisoner of Azkaban",
+      "Year": "2004",
+      "imdbID": "tt0304141",
       "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTQ0OTU1MDkxMF5BMl5BanBnXkFtZTcwNjI5OTA3OQ@@._V1_SX300.jpg",
-      "id": 1
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg",
+      "id": 4
     }
   ],
   "watchlist": [
-    {
-      "Title": "Har Dil Jo Pyar Karega...",
-      "Year": "2000",
-      "imdbID": "tt0250415",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjc4NzEwNTAtZjg3OS00NmYwLTg3YjQtOWQ3ZGRjZmI4MTQ4XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
-      "id": 5
-    }
-  ],
-  "watched": [
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
       "Year": "2001",
       "imdbID": "tt0241527",
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
-      "id": 2
+      "id": 1
     }
-  ]
+  ],
+  "watched": []
 }

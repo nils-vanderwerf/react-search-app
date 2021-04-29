@@ -23,11 +23,13 @@ const Watched = () => {
 
     return (
         <div className="main-wrapper">
-        <Heading heading ='Watched'/>
+            <Heading heading ='Watched'/>
         <div className="movie-list-wrapper">
             {  
                 watched ?
-                <MovieList moviesToShow={watched}/> :
+                <MovieList 
+                    moviesToShow={watched}/> 
+                :
                 <p>Add movies you've watched.</p>
             }
             

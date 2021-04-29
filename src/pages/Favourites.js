@@ -25,12 +25,12 @@ const Favourites = () => {
       <div className="main-wrapper favourites">
       <Heading heading ='Favourites'/>
       <div className="movie-list-wrapper">
-          {
-              
-              favourites ?
-              <MovieList 
-              moviesToShow={favourites}/> :
-              <p>Add movies to your favourites.</p>
+          {  
+            favourites ?
+            <MovieList 
+              moviesToShow={favourites}/> 
+              :
+            <p>Add movies to your favourites.</p>
           }
           
       </div>

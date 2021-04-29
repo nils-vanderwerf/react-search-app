@@ -9,14 +9,15 @@ const AddFavourites = ({movie}) => {
   
   const addToFaves = (event) => {
       event.preventDefault();  
-      const movieIsFave = favourites.find(element => element.imdbID === movie.imdbID)
+      const movieIsFave = favourites.find(element => 
+        element.imdbID === movie.imdbID)
       if (movieIsFave) {
         return null
-      }
-      else { 
-      const newFavesList = [...favourites, movie]
-      setFavourites(newFavesList)
-      postFaveData(movie)
+      } 
+      else {
+        const newFavesList = [...favourites, movie]
+        setFavourites(newFavesList)
+        postFaveData(movie)
       }
     }
 
@@ -31,7 +32,7 @@ const AddFavourites = ({movie}) => {
           
         };
         
-        fetch("http://localhost:8000/favourites", configObj)
+        fetch(`http://localhost:8000/favourites`, configObj)
           .then(function(response) {
             return response.json();
           })
@@ -39,12 +40,6 @@ const AddFavourites = ({movie}) => {
             console.log(object);
           });
       }
-
-      // if (
-      //   movie is already favourited or user clicks on remove
-      //   delete or add to 
-      // )
-
 
     return (
         <button className="btn favourite tooltip" onClick={addToFaves} value={movie.id}>

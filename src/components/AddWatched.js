@@ -2,18 +2,24 @@ import React, {useContext} from 'react';
 import '../lib/font-awesome/css/all.min.css'
 import {WatchedContext} from '../contexts/WatchedContext'
 
-
 const AddWatched = ({movie}) => {
 
   const [watched, setWatched] = useContext(WatchedContext)
 
     const AddToWatchedDB = (event) => {
-          event.preventDefault();
-          const newWatchedList = [...watched, movie]
-          setWatched(newWatchedList)
-          postWatchedData()
-          //If its watched, it doesn't need to be in the watchlist any more
-          deleteFromWatchList()
+            event.preventDefault();
+          const movieIsInWatched = favourites.find(element => 
+            element.imdbID === movie.imdbID)
+          if (movieIsInWatched) {
+            return null
+          } 
+          else {
+            const newWatchedList = [...watched, movie]
+            setWatched(newWatchedList)
+            postWatchedData()
+            //If its watched, it doesn't need to be in the watchlist any more
+            deleteFromWatchList()
+          }
         }
 
     const postWatchedData = () => {

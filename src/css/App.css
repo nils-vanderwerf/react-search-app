@@ -18,20 +18,14 @@ body {
 .main-wrapper {
   border-width: 3px;
 }
-.main-wrapper.home {
-  border-left: #66D9AF;
+
+h1 {
+  margin-top: 0;
 }
 
-.main-wrapper.favourites {
-  border-left: #A223D9;
-}
-
-.main-wrapper.watchlist {
-  border-left: #BF391B;
-}
-
-.main-wrapper.watched {
-  border-left: #ff8300;
+h3 {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 a {

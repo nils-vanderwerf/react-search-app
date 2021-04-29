@@ -25,13 +25,13 @@ const RemoveFavourites = ({movie}) => {
             return response.json();
             })
             .then(function(object) {
-            console.log(object);
+                console.log(object);
             });
         }
 
     return (
         <button className="btn remove-favourite tooltip" onClick={RemoveCard} value={movie.id}>
-            <span class="tooltiptext">Remove from Favourites</span>
+            <span className="tooltiptext">Remove from Favourites</span>
             <span><i className="fa fa-heart"></i></span>
         </button>
     )

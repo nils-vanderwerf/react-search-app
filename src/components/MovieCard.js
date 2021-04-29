@@ -14,7 +14,7 @@ import {FavouritesContext} from '../contexts/FavouritesContext'
 import {WatchedContext} from '../contexts/WatchedContext'
 import {WatchListContext} from '../contexts/WatchListContext'
 
-const MovieCard = ({id, movie, key, isFavourited}) => {
+const MovieCard = ({movie}) => {
     const [favourites] = useContext(FavouritesContext)
     const [watched] = useContext(WatchedContext)
     const [watchList] = useContext(WatchListContext)
@@ -31,7 +31,7 @@ const MovieCard = ({id, movie, key, isFavourited}) => {
             </div>
             <div className="card-info-container">
                 <h2>{movie.Title}</h2>
-                <h3>Released: {movie.Year}</h3>
+                <h3>Released: <strong>{movie.Year}</strong></h3>
             </div>
 
             <div className="controls">
@@ -45,7 +45,6 @@ const MovieCard = ({id, movie, key, isFavourited}) => {
                         <RemoveFromWatchList movie={movie}/> :
                         <AddWatchList movie={movie}/>
                     }
-
 
                     {movieIsInWatched ? 
                         <RemoveFromWatched movie={movie}/> : 

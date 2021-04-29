@@ -17,7 +17,6 @@ const MoveFromWatchList = ({movie}) => {
         }
 
     const deleteFromDB = () => {
-        console.log("this movie", movie)
         
         fetch(`http://localhost:8000/watchlist/${movie.id}`, {
                 method: "DELETE",

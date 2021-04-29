@@ -11,8 +11,8 @@ const Home = () => {
 
 
   return (
-    <div class="main-wrapper">
-        <Heading heading ='Search for movies' color="rgb(27, 171, 228)"/>
+    <div className="main-wrapper">
+        <Heading heading ='Search for movies' />
           <div className="movie-list-wrapper">
             <MovieList moviesToShow={movies}/>
         </div>
