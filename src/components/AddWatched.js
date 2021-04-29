@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import '../lib/font-awesome/css/all.min.css'
 import {WatchedContext} from '../contexts/WatchedContext'
+import WatchList from '../pages/WatchList';
 
 const AddWatched = ({movie}) => {
 
@@ -8,7 +9,7 @@ const AddWatched = ({movie}) => {
 
     const AddToWatchedDB = (event) => {
             event.preventDefault();
-          const movieIsInWatched = favourites.find(element => 
+          const movieIsInWatched = WatchList.find(element => 
             element.imdbID === movie.imdbID)
           if (movieIsInWatched) {
             return null
@@ -56,7 +57,8 @@ const AddWatched = ({movie}) => {
         }
 
     return (
-      <button className="btn add-watched tooltip" onClick={AddToWatchedDB} value={movie.id}>
+      <button className="btn add-watched tooltip" 
+        onClick={AddToWatchedDB} value={movie.id}>
           <span class="tooltiptext">Add to Watched</span>
           <span><i className="fa fa-eye"></i></span>
       </button>
