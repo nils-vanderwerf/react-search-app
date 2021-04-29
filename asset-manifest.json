@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-search-app/static/css/main.06cd904d.chunk.css",
-    "main.js": "/react-search-app/static/js/main.3cf59feb.chunk.js",
-    "main.js.map": "/react-search-app/static/js/main.3cf59feb.chunk.js.map",
+    "main.css": "/react-search-app/static/css/main.69f8079a.chunk.css",
+    "main.js": "/react-search-app/static/js/main.c4ed1f89.chunk.js",
+    "main.js.map": "/react-search-app/static/js/main.c4ed1f89.chunk.js.map",
     "runtime-main.js": "/react-search-app/static/js/runtime-main.711a542c.js",
     "runtime-main.js.map": "/react-search-app/static/js/runtime-main.711a542c.js.map",
-    "static/js/2.4238a1b3.chunk.js": "/react-search-app/static/js/2.4238a1b3.chunk.js",
-    "static/js/2.4238a1b3.chunk.js.map": "/react-search-app/static/js/2.4238a1b3.chunk.js.map",
+    "static/js/2.00c6ff53.chunk.js": "/react-search-app/static/js/2.00c6ff53.chunk.js",
+    "static/js/2.00c6ff53.chunk.js.map": "/react-search-app/static/js/2.00c6ff53.chunk.js.map",
     "index.html": "/react-search-app/index.html",
-    "static/css/main.06cd904d.chunk.css.map": "/react-search-app/static/css/main.06cd904d.chunk.css.map",
-    "static/js/2.4238a1b3.chunk.js.LICENSE.txt": "/react-search-app/static/js/2.4238a1b3.chunk.js.LICENSE.txt",
+    "static/css/main.69f8079a.chunk.css.map": "/react-search-app/static/css/main.69f8079a.chunk.css.map",
+    "static/js/2.00c6ff53.chunk.js.LICENSE.txt": "/react-search-app/static/js/2.00c6ff53.chunk.js.LICENSE.txt",
     "static/media/all.min.css": "/react-search-app/static/media/fa-solid-900.a940d584.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.711a542c.js",
-    "static/js/2.4238a1b3.chunk.js",
-    "static/css/main.06cd904d.chunk.css",
-    "static/js/main.3cf59feb.chunk.js"
+    "static/js/2.00c6ff53.chunk.js",
+    "static/css/main.69f8079a.chunk.css",
+    "static/js/main.c4ed1f89.chunk.js"
   ]
 }
