@@ -23,7 +23,7 @@ const App = () => {
 
   const GetMovies = () => {
 
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}&plot=short`
+    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}&plot=short`
 
       fetch(url)
         .then(response => response.json())
@@ -50,10 +50,10 @@ const App = () => {
                 <Nav/>
               </div>
               <div className="main-content">
-                  <Route 
-                      exact path="/" 
-                      component={Home}/>
-                  <Route 
+                  <Route exact path="/">
+                    <Home GetMovies = {GetMovies}/>
+                  </Route>
+                  <Route
                       exact path="/favourites" 
                       component={Favourites}/>
                   <Route 

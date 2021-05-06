@@ -18,15 +18,11 @@ const RemoveFromWatched = ({movie}) => {
 
     const deleteFromDB = () => {
         
-        fetch(`http://localhost:8000/watched/${movie.id}`, {
+        fetch(`http://localhost:8000/watched/${watched.id}`, {
             method: "DELETE",
             })
-            .then(function(response) {
-            return response.json();
-            })
-            .then(function(object) {
-            console.log(object);
-            });
+        .then(response => response)
+        .catch(error => console.log(error))
         }
 
     return (

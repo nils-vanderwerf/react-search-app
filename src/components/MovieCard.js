@@ -1,6 +1,6 @@
 import '../css/App.css'
 import '../css/MovieCard.css'
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import AddFavourites from './AddFavourites'
 import RemoveFavourites from './RemoveFavourites'
 
@@ -10,11 +10,11 @@ import RemoveFromWatchList from './RemoveFromWatchList'
 import AddWatched from './AddWatched'
 import RemoveFromWatched from './RemoveFromWatched'
 
-import {FavouritesContext} from '../contexts/FavouritesContext'
-import {WatchedContext} from '../contexts/WatchedContext'
-import {WatchListContext} from '../contexts/WatchListContext'
+import { FavouritesContext } from '../contexts/FavouritesContext'
+import { WatchedContext } from '../contexts/WatchedContext'
+import { WatchListContext } from '../contexts/WatchListContext'
 
-const MovieCard = ({movie}) => {
+const MovieCard = ({ movie }) => {
     const [favourites] = useContext(FavouritesContext)
     const [watched] = useContext(WatchedContext)
     const [watchList] = useContext(WatchListContext)
@@ -23,11 +23,11 @@ const MovieCard = ({movie}) => {
     const movieIsFave = favourites.find(element => element.imdbID === movie.imdbID)
     const movieIsInWatchList = watchList.find(element => element.imdbID === movie.imdbID)
     const movieIsInWatched = watched.find(element => element.imdbID === movie.imdbID)
-    
+
     return (
         <div className="movie-card" key={movie.imdbID}>
             <div className="image-container">
-                <img src={movie.Poster} alt={movie.Title}/>
+                <img src={movie.Poster} alt={movie.Title} />
             </div>
             <div className="card-info-container">
                 <h2>{movie.Title}</h2>
@@ -35,24 +35,24 @@ const MovieCard = ({movie}) => {
             </div>
 
             <div className="controls">
-                    {movieIsFave ?  
-                        <RemoveFavourites movie={movie}/> : 
-                        <AddFavourites movie={movie}/>
-                    } 
-                    
-                    {/* Nested ternary operator */}
-                    {movieIsInWatchList ?
-                        <RemoveFromWatchList movie={movie}/> :
-                        <AddWatchList movie={movie}/>
-                    }
+                {movieIsFave ?
+                    <RemoveFavourites movie={movie} /> :
+                    <AddFavourites movie={movie} />
+                }
 
-                    {movieIsInWatched ? 
-                        <RemoveFromWatched movie={movie}/> : 
-                        <AddWatched movie={movie}/>
-                    }
+                {/* Nested ternary operator */}
+                {movieIsInWatchList ?
+                    <RemoveFromWatchList movie={movie} /> :
+                    <AddWatchList movie={movie} />
+                }
+
+                {movieIsInWatched ?
+                    <RemoveFromWatched movie={movie} /> :
+                    <AddWatched movie={movie} />
+                }
 
             </div>
-        </div> 
+        </div>
     )
 }
 

@@ -1,33 +1,28 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import '../lib/font-awesome/css/all.min.css'
 import '../css/ButtonComponents.css'
-import {FavouritesContext} from '../contexts/FavouritesContext'
+import { FavouritesContext } from '../contexts/FavouritesContext'
 
 
-const RemoveFavourites = ({movie}) => {
+const RemoveFavourites = ({ movie }) => {
     const [favourites, setFavourites] = useContext(FavouritesContext)
 
     const RemoveCard = (event) => {
-        event.preventDefault();   
+        event.preventDefault();
         const newFavouritesList = favourites.filter(
             (favourite) => favourite.imdbID !== movie.imdbID
-          );
-        setFavourites(newFavouritesList)
+        );
         deleteFromDB()
-        }
+        setFavourites(newFavouritesList)
+    }
 
     const deleteFromDB = () => {
-
         fetch(`http://localhost:8000/favourites/${movie.id}`, {
             method: "DELETE",
-            })
-            .then(function(response) {
-            return response.json();
-            })
-            .then(function(object) {
-                console.log(object);
-            });
-        }
+        })
+        .then(response => response)
+        .catch(error => console.log(error))
+    }
 
     return (
         <button className="btn remove-favourite tooltip" onClick={RemoveCard} value={movie.id}>

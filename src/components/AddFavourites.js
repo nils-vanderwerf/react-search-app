@@ -16,6 +16,7 @@ const AddFavourites = ({movie}) => {
       } 
       else {
         const newFavesList = [...favourites, movie]
+        movie.id = movie.imdbID //sets the id to the imbD so it can be deleted later
         setFavourites(newFavesList)
         postFaveData(movie)
       }
@@ -33,12 +34,8 @@ const AddFavourites = ({movie}) => {
         };
         
         fetch(`http://localhost:8000/favourites`, configObj)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(object) {
-            console.log(object);
-          });
+        .then(response => response.json())
+        .then(data => console.log(data))
       }
 
     return (
