@@ -17,6 +17,7 @@ const AddFavourites = ({movie}) => {
       else {
         const newFavesList = [...favourites, movie]
         movie.id = movie.imdbID //sets the id to the imbD so it can be deleted later
+        console.log('movie in this context is:', movie)
         setFavourites(newFavesList)
         postFaveData(movie)
       }

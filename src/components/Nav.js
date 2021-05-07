@@ -15,7 +15,7 @@ const Nav = () => {
                   <li>
                      <NavLink exact
                         className="home link-item"
-                        to='/'
+                        to='/react-search-app'
                         activeClassName="selected"
                      >Home
                      </NavLink>

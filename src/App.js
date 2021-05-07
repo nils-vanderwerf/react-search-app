@@ -50,7 +50,7 @@ const App = () => {
                 <Nav/>
               </div>
               <div className="main-content">
-                  <Route exact path="/">
+                  <Route exact path="/react-search-app">
                     <Home GetMovies = {GetMovies}/>
                   </Route>
                   <Route

@@ -1,5 +1,30 @@
 {
   "favourites": [],
-  "watchlist": [],
+  "watchlist": [
+    {
+      "Title": "Harry Potter and the Goblet of Fire",
+      "Year": "2005",
+      "imdbID": "tt0330373",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg",
+      "id": "tt0330373"
+    },
+    {
+      "Title": "Gridiron Gang",
+      "Year": "2006",
+      "imdbID": "tt0421206",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzk4NTAwNTAzN15BMl5BanBnXkFtZTcwNjczODYzMQ@@._V1_SX300.jpg",
+      "id": "tt0421206"
+    },
+    {
+      "Title": "The Apple Dumpling Gang",
+      "Year": "1975",
+      "imdbID": "tt0072653",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZTc5NDk1NDgtMThmYy00MWViLTk2ZjUtNTQyMDI1MDI0MDRjXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg",
+      "id": "tt0072653"
+    }
+  ],
   "watched": []
 }
